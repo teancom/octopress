@@ -1,0 +1,14 @@
+---
+date: '2010-04-22 14:09:26'
+layout: post
+slug: why-is-it
+status: publish
+title: Why is it...
+wordpress_id: '385'
+categories:
+- Animation
+---
+
+that so much of the good short video out there is commercial? I don't just mean professionally produced, but actually made to sell a product.  I thought part of the democratization of video production, from cheap digital cams, to editing tools that run on laptops, was that we would see more good non-commercial stuff.  But most of the shorts that actually affect me emotionally have a company logo at the end.
+
+Anyway, here is the latest example of that, that kicked off my mini-rant, is [here](http://nofatclips.com/02010/04/10/persil/Persil%20-%20Roboboy_sml.mp4).  And I wholeheartedly agree with the sentiment.

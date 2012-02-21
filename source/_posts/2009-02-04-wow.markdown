@@ -1,0 +1,14 @@
+---
+date: '2009-02-04 00:19:59'
+layout: post
+slug: wow
+status: publish
+title: Wow
+wordpress_id: '290'
+categories:
+- Animation
+- Computers
+- Effluvia
+---
+
+Just [wow.](http://www.cornify.com/)

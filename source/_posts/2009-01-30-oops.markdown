@@ -1,0 +1,12 @@
+---
+date: '2009-01-30 08:12:48'
+layout: post
+slug: oops
+status: publish
+title: Oops
+wordpress_id: '258'
+categories:
+- Effluvia
+---
+
+I just noticed that my 'video posting' script had a bug, that caused everything on the site to look wonky.  Fixed, and sorry...

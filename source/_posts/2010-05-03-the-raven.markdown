@@ -1,0 +1,13 @@
+---
+date: '2010-05-03 20:19:57'
+layout: post
+slug: the-raven
+status: publish
+title: The Raven
+wordpress_id: '486'
+categories:
+- Animation
+- Movies
+---
+
+[This (very) short movie](http://www.vimeo.com/11099712) is almost exactly like what I used to fantasize/imagine as a kid.  Super powers, killer robots, running through the streets, it's all there.  It's like they took my 10-year old imagination and filmed it.

@@ -1,0 +1,12 @@
+---
+date: '2010-05-07 14:06:52'
+layout: post
+slug: the-itch
+status: publish
+title: The Itch
+wordpress_id: '507'
+categories:
+- Science
+---
+
+Try reading [this article about itching, phantom limb pain, and our brains](http://www.newyorker.com/reporting/2008/06/30/080630fa_fact_gawande?printable=true), without having random itches all over your body.  Even while reading that what you're feeling is all in your head, you can't but scratch.

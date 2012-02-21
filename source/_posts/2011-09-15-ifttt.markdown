@@ -1,0 +1,12 @@
+---
+date: '2011-09-15 19:22:37'
+layout: post
+slug: ifttt
+status: publish
+title: ifttt
+wordpress_id: '31513'
+categories:
+- Computers
+---
+
+[This website is the future.](http://ifttt.com)  And I love living in it.

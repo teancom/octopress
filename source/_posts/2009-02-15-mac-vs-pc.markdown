@@ -1,0 +1,14 @@
+---
+date: '2009-02-15 18:00:47'
+layout: post
+slug: mac-vs-pc
+status: publish
+title: Mac vs. PC
+wordpress_id: '313'
+categories:
+- Animation
+- Computers
+- Effluvia
+---
+
+The _real_ [story](http://dekku.blogspot.com/2009/01/mac-vs-pc.html).  

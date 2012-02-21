@@ -1,0 +1,15 @@
+---
+date: '2010-04-10 09:56:22'
+layout: post
+slug: pixels
+status: publish
+title: Pixels
+wordpress_id: '361'
+categories:
+- Animation
+- Computers
+---
+
+This is a shibboleth.  If you recognize all of [these games](http://dekku.nofatclips.com/2010/04/patrick-jean-pixels.html), then you were (probably) born in the '70s.
+
+

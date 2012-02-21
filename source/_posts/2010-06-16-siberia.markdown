@@ -1,0 +1,12 @@
+---
+date: '2010-06-16 12:30:57'
+layout: post
+slug: siberia
+status: publish
+title: Siberia
+wordpress_id: '592'
+categories:
+- Life
+---
+
+[Speaking of cold-war relics, here is an article about traveling across Siberia](http://www.theatlantic.com/past/docs/issues/97apr/siberia.htm).  Note that it was written in '97, and yet the communist aparatchiks were still in power.

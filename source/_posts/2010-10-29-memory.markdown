@@ -1,0 +1,12 @@
+---
+date: '2010-10-29 14:35:37'
+layout: post
+slug: memory
+status: publish
+title: Memory
+wordpress_id: '762'
+categories:
+- Science
+---
+
+[Both examples they give, "EP" and "AJ", fill me with horror.](http://ngm.nationalgeographic.com/print/2007/11/memory/foer-text)

@@ -1,0 +1,12 @@
+---
+date: '2010-05-09 12:33:12'
+layout: post
+slug: kubrick
+status: publish
+title: Kubrick
+wordpress_id: '522'
+categories:
+- Movies
+---
+
+[A decently long article by one of Stanley Kubrick's friends](http://www.vanityfair.com/hollywood/classic/features/kubrick-199908?printable=true), about the man himself.  I don't know if Kubrick is one of my favorite directors, per se, (I haven't seen more than a handful of his movies) but the ones I have seen I adore beyond all reason (2001 and Dr. Strangelove, for example).

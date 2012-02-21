@@ -1,0 +1,12 @@
+---
+date: '2010-10-28 00:34:55'
+layout: post
+slug: i-hunt
+status: publish
+title: I hunt
+wordpress_id: '753'
+categories:
+- Effluvia
+---
+
+But I don't ever see myself doing this.

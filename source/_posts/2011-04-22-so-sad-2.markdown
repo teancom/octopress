@@ -1,0 +1,12 @@
+---
+date: '2011-04-22 17:02:15'
+layout: post
+slug: so-sad-2
+status: publish
+title: So Sad
+wordpress_id: '21923'
+categories:
+- Life
+---
+
+I link to a lot of "Justice System Gone Wrong" sort of stuff (because there's a lot to link to), but this isn't that. [A harrowing look at a bad situation all around](http://articles.latimes.com/print/2001/dec/30/news/mn-18995).

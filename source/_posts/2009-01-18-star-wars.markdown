@@ -1,0 +1,12 @@
+---
+date: '2009-01-18 22:06:49'
+layout: post
+slug: star-wars
+status: publish
+title: Star Wars!
+wordpress_id: '32'
+categories:
+- Effluvia
+---
+
+[Retold](http://vimeo.com/2809991) by someone who's never seen it.  Forwarded to me by [Hava](http://nonfictionlover.today.com).

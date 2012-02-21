@@ -1,0 +1,12 @@
+---
+date: '2009-12-29 09:47:08'
+layout: post
+slug: im-back
+status: publish
+title: I'm back
+wordpress_id: '317'
+categories:
+- Effluvia
+---
+
+Don't know for how long, but I'm back. 

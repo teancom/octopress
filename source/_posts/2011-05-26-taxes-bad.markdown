@@ -1,0 +1,12 @@
+---
+date: '2011-05-26 11:30:12'
+layout: post
+slug: taxes-bad
+status: publish
+title: Taxes Bad!
+wordpress_id: '28569'
+categories:
+- Politics
+---
+
+[Magic Good!](http://www.salon.com/news/politics/war_room/2011/05/25/gop_debt_lie)

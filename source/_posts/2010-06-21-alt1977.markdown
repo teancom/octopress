@@ -1,0 +1,12 @@
+---
+date: '2010-06-21 15:55:36'
+layout: post
+slug: alt1977
+status: publish
+title: ALT/1977
+wordpress_id: '611'
+categories:
+- Computers
+---
+
+[Hi-larious](http://www.behance.net/Gallery/ALT1977-WE-ARE-NOT-TIME-TRAVELERS/545221).

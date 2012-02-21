@@ -1,0 +1,12 @@
+---
+date: '2009-01-30 12:00:37'
+layout: post
+slug: zoinks
+status: publish
+title: Zoinks!
+wordpress_id: '261'
+categories:
+- Politics
+---
+
+We're going to need a lot more [zoinks](http://www.mint.com/blog/finance-core/a-visual-guide-to-the-financial-crisis-unemployment-rates/)
