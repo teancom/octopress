@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<article class="text row">
+	{% if page.title %}
+		<header>
+			<h2>{{ page.title }}</h2>
+		</header>
+	{% endif %}
+	<section>
+		{{ content }}
+	</section>
+	<footer>
+		{% include post/date.html %}
+	</footer>
+</article>

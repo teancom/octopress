@@ -1,0 +1,354 @@
+/*
+	Ethan Turkeltaub
+		file: css/application.css
+*/
+
+@import "gyaku";
+
+$calluna: "calluna-1", "calluna-2";
+$calluna-sans: "calluna-sans-1", "calluna-sans-2";
+
+$primary: #53C980;
+$secondary: #1CAD54;
+
+$lighter-primary: #66E898;
+$lighter-secondary: #42E37F;
+
+$nav: #698066;
+
+/*
+	= Appendix
+		I. Media Queries
+		II. Universal
+		III. Header
+		IV. Main
+		V. Footer
+*/
+
+/*
+	I. Media Queries
+*/
+
+@media handheld, only screen and (max-width: 767px) { /* Handheld devices. */
+	body > nav {
+		li {
+			display: block;
+		}
+	}
+	
+	blockquote {
+		text-align: left;
+		
+		cite p {
+			left: 0px !important;
+		}
+	}
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) { /* iPhone 4 */
+
+}
+
+/*
+	II. Universal
+*/
+
+body {
+	border-top: 2px solid $lighter-secondary;
+	color: #333;
+	font: 300 15px/1.75em $calluna, serif;
+	text-align: center;
+}
+
+a {
+	color: $primary;
+	text-decoration: none;
+	
+	&:hover {
+		color: $secondary;
+	}
+}
+
+abbr {
+	border-bottom: 1px dotted #ccc;
+}
+
+blockquote {
+	border-left: 3px solid $lighter-secondary;
+	color: #444;
+	font-size: 1.15em;
+	font-style: italic;
+	margin: 1.25em 0 3em;
+	padding-left: 1em;
+	text-align: justify;
+	
+	cite {
+		text-align: center;
+		
+		p {
+			font-style: normal !important;
+			margin-bottom: 0;
+			margin-top: 1em;
+			padding-bottom: 0;
+			position: relative;
+		}
+	}
+}
+
+code, pre {
+	font: 0.85em/1.25em "Anonymous Pro", Monaco, Courier New, Courier, monospace;
+}
+
+em {
+	font-style: italic;
+}
+
+figure {
+	margin: 1em 0 2em;
+	
+	figcaption {
+		font-style: italic;
+	}
+}
+
+h1 {
+	padding-bottom: 10px;
+	text-transform: uppercase;
+	
+	a {
+		border-bottom: 5px solid $lighter-primary;
+		color: #555;
+	
+		&:hover {
+			border-bottom: 5px solid $lighter-secondary;
+			color: #333;
+		}
+	}
+}
+
+h2 {
+	font-family: $calluna-sans, helvetica, arial, sans-serif;
+	font-weight: 700;
+	font-size: 1.25em;
+	text-transform: uppercase;
+	
+	a {
+		color: #222;
+		
+		&:hover {
+			color: #444;
+		}
+	}
+}
+
+h3 {
+	font-size: 1.125em;
+}
+
+h4 {
+	font-size: 1em;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.75em;
+}
+
+p + p {
+	padding-top: 1.75em;
+}
+
+p > img + p {
+	text-indent: 0;
+}
+
+pre {
+	background: #fafafa !important;
+	padding: 1em;
+	margin: 1em 0 !important;
+
+	& + p {
+		text-indent: 0 !important;
+	}
+}
+
+ul, ol {
+	padding: 1.75em 0;
+}
+
+strong {
+	font-weight: bold;
+}
+
+#contain {
+	margin: 4em 0;
+}
+
+
+/*
+	III. Header
+*/
+
+#contain > header {
+	padding-bottom: 5em;
+	text-align: center;
+}
+
+
+/*
+	IV. Main
+*/
+
+article {
+	* {
+		margin: 0 auto;
+	}
+	
+	header {
+		margin-bottom: 1em;
+		max-width: 760px;
+	}
+	
+	section {
+		max-width: 460px;
+	}
+	
+	p.source {
+		text-align: center;
+		font-style: italic;
+	}
+	
+	footer {
+		margin-top: 2em;
+		text-align: center;
+		
+		time {
+			border-top: 1px solid #e0e0e0;
+			font-size: 0.85em;
+			padding: 0.75em 5em;
+			
+			&:hover {
+				border-top: 1px solid #333;
+				
+				a {
+					color: #333;
+				}
+			}
+			
+			a {
+				color: #ccc;
+				display: inline-block;
+				
+				&:hover {
+					color: #333;
+				}
+			}
+		}
+	}
+	
+	.livefyre {
+		margin-top: 1.75em;
+	}
+	
+	.single {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+}
+
+article + article {
+	padding-top: 12em;
+}
+
+.text {
+	text-align: justify;
+	
+	blockquote {
+		margin: 1.75em 0;
+	}
+	
+	blockquote, br, ol, ul {
+		& + p {
+			text-indent: 0 !important;
+		}
+	}
+
+	h2 {
+		text-align: center !important;
+	}
+	
+	h3, h4, h5, h6 {
+		margin-top: 1.75em;
+		
+		& + p {
+			text-indent: 0 !important;
+		}
+	}
+	
+	section p:nth-child(n+2) {
+		text-indent: 1.75em;
+	}
+	
+	section p + p {
+		margin: 0;
+		padding: 0;
+	}
+	
+	.livefyre {
+		p {
+			text-indent: 0 !important;
+		}
+	}
+}
+
+footer#pagination {
+	margin-top: 10em;
+	max-width: 760px;
+	
+	p {
+		display: inline-block;
+	}
+	
+	p + p {
+		margin: 0;
+		padding: 0;
+	}
+	
+	p#older {
+		float: left;
+	}
+	
+	p#newer {
+		float: right;
+	}
+	
+	p#number {
+		position: relative;
+		left: -20px;
+	}
+}
+
+.link h2 a:after {
+	content: " \2192";
+}
+
+.photo, .audio, .video {
+	header {
+		margin-bottom: 1.25em;
+	}
+}
+
+
+/*
+	V. Footer
+*/
+
+#contain > footer {
+	margin-top: 6em;
+	padding-top: 1.5em;
+	border-top: 1px solid #e0e0e0;
+}
+
