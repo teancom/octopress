@@ -21,6 +21,9 @@ To start with, let's define our terms. By packages, I mean system-level packages
 that integrate with the system-level packaging manager. I.e., debs on debian-derived
 distributions, rpms on Redhat-derived distros, etc. These package formats do all 
 the usual things that you'd want: determine dependencies, allow a given package to 
-"provide" something, have built-in support for cryptographic signing and 
-verification of those signatures, have the ability to run scripts before and after
-installation and removal, and much more.
+"provide" something other than just files (allowing for virtual dependencies), have 
+built-in support for cryptographic signing and verification of those signatures, 
+have the ability to run scripts before and after installation and removal, and much 
+more. 
+
+Language-level package management systems, like gem and npm
