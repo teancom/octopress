@@ -26,4 +26,10 @@ built-in support for cryptographic signing and verification of those signatures,
 have the ability to run scripts before and after installation and removal, and much 
 more. 
 
-Language-level package management systems, like gem and npm
+Language-level package management systems, like gem and npm, tend to only account
+for dependencies within themselves. A ruby gem can depend on another ruby gem (and 
+have that dependency fulfilled automatically on install) but if it requires a library
+or program outside of ruby, you have to install that manually. That's fair! A given
+ruby gem could be installed on any variation of linux, unix, or even Windows, and
+it's unrealistic to expect the individual gems or even the gem system itself 
+
