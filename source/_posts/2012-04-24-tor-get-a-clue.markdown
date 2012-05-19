@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tor Get a Clue"
+title: "Tor Gets a Clue"
 date: 2012-04-24 22:01
 comments: true
 categories: 
