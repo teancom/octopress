@@ -1,0 +1,8 @@
+---
+layout: post
+title: "Today"
+date: 2012-06-28 15:32
+comments: true
+categories: 
+---
+Is a [good day for America](http://www.theatlantic.com/business/archive/2012/06/the-health-care-decision-explained-in-1-paragraph-on-scotusblog/259097/).
