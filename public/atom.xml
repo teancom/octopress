@@ -4,7 +4,7 @@
   <title><![CDATA[geekery]]></title>
   <link href="http://gnuconsulting.com//atom.xml" rel="self"/>
   <link href="http://gnuconsulting.com//"/>
-  <updated>2014-05-17T16:14:51-04:00</updated>
+  <updated>2014-05-17T16:50:08-04:00</updated>
   <id>http://gnuconsulting.com//</id>
   <author>
     <name><![CDATA[David Bishop]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[When should I use technology <X>?]]></title>
+    <link href="http://gnuconsulting.com//blog/2014/05/17/when-should-i-use-technology/"/>
+    <updated>2014-05-17T16:18:00-04:00</updated>
+    <id>http://gnuconsulting.com//blog/2014/05/17/when-should-i-use-technology</id>
+    <content type="html"><![CDATA[<p>You shouldn&rsquo;t.</p>
+
+<p>Oh, was that answer too short? I&rsquo;ll expand.</p>
+
+<p>When setting up a new webservice, datacenter, or anything beyond a toy weekend
+knockaround project, the generic answer to &ldquo;Should I use <foo>?&rdquo; is always &ldquo;No!&rdquo;.
+That&rsquo;s because if you don&rsquo;t know with an absolute certainty that you need it, you
+don&rsquo;t need it. This goes for anything from job queueing systems to the latest NoSQL
+hotness to, well, pretty much anything with the word &ldquo;distributed&rdquo; in it. There are
+definitely places for those technologies &ndash; they do serve a purpose! However, if you
+view them as &ldquo;things to do as a last resort&rdquo;, you&rsquo;ll be a hell of a lot better
+served than if you think of them as some sort of magical fairy pixie dust that you
+can sprinkle anywhere and make things &ldquo;better&rdquo;. And almost without exception, those
+who <em>actually</em> need them have arrived at that point after taking the old, boring,
+(reliable) workhorses (that most everyone should probably still be using) to their
+very limits.</p>
+
+<p>Remember, if you have to ask, the answer is &lsquo;no&rsquo;. But if you already know the
+answer, then what are you asking me for?</p>
+
+<p>Further reading: <a href="http://devopsu.com/blog/boring-systems-build-badass-businesses/">http://devopsu.com/blog/boring-systems-build-badass-businesses/</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Creating a Debian rescue usb drive in Mac OS X]]></title>
@@ -276,15 +305,6 @@ description: General geekery, a dash of politics, and more.
     <updated>2011-08-15T09:41:19-04:00</updated>
     <id>http://gnuconsulting.com//blog/2011/08/15/ultimate-batting-practice</id>
     <content type="html"><![CDATA[<p><a href="http://www.youtube.com/watch?v=W8SK0rk5jdE">Insane!</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Star Wars Twitter]]></title>
-    <link href="http://gnuconsulting.com//blog/2011/07/30/star-wars-twitter/"/>
-    <updated>2011-07-30T14:02:49-04:00</updated>
-    <id>http://gnuconsulting.com//blog/2011/07/30/star-wars-twitter</id>
-    <content type="html"><![CDATA[<p><a href="http://www.youtube.com/watch?v=aegEhLOcpU0">Twitter feeds of Episode IV.</a>  Pretty funny.</p>
 ]]></content>
   </entry>
   
