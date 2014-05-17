@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Creating a Debian rescue usb drive in Mac OS X - geekery</title>
+  <meta name="author" content="David Bishop">
+
+  
+  <meta name="description" content="This guide will get you a USB stick running debian that you can use to boot into rescue mode. Well, you could also use it to install from, but that& &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://gnuconsulting.com//blog/2013/01/29/creating-a-debian-rescue-usb-drive/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="geekery" type="application/atom+xml">
+  <script type="text/javascript" src="http://use.typekit.com/rtp2ork.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  
+
+</head>
+
+<body   >
+  <header role="banner">
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:gnuconsulting.com/" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Creating a Debian Rescue Usb Drive in Mac OS X</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-29T09:53:00-05:00" pubdate data-updated="true">Jan 29<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This guide will get you a USB stick running debian that you can use to boot into rescue mode. Well, you could also use it to install from, but that&rsquo;s not what I care about.</p>
+
+<ol>
+<li><p>Do the following, while modifying the version string to whatever the latest release is in the second url (both places!):
+     cd ~
+     wget <a href="ftp://ftp.debian.org/debian/dists/stable/main/installer-amd64/current/images/hd-media/boot.img.gz">ftp://ftp.debian.org/debian/dists/stable/main/installer-amd64/current/images/hd-media/boot.img.gz</a>
+     wget <a href="http://cdimage.debian.org/debian-cd/6.0.6/amd64/iso-cd/debian-6.0.6-amd64-businesscard.iso">http://cdimage.debian.org/debian-cd/6.0.6/amd64/iso-cd/debian-6.0.6-amd64-businesscard.iso</a></p></li>
+<li><p>Procure a USB stick, at least 1GB in size</p></li>
+<li><p>Plug it in. Run the following to see what device name the stick was assigned.:</p>
+
+<pre><code> $ ls -l /dev/disk*
+ brw-r----- 1 root operator 1, 0 Jan 19 11:10 /dev/disk0
+ brw-r----- 1 root operator 1, 1 Jan 19 11:10 /dev/disk0s1
+ brw-r----- 1 root operator 1, 3 Jan 19 11:10 /dev/disk0s2
+ brw-r----- 1 root operator 1, 2 Jan 19 11:10 /dev/disk0s3
+ brw-r----- 1 root operator 1, 4 Jan 19 11:10 /dev/disk1
+ brw-r----- 1 root operator 1, 0 Jan 30 12:15 /dev/disk3
+ brw-r----- 1 root operator 1, 1 Jan 30 12:15 /dev/disk3s1
+</code></pre></li>
+<li><p>Find the device that has a creation time of &ldquo;just now&rdquo;. Obviously, which device you use may be different than mine. Run the following:</p>
+
+<pre><code> diskutil unmountVolume /dev/disk3
+</code></pre></li>
+<li><p>Now you copy the boot.img onto the drive. <em>Please note</em> that I am using rdisk not disk in the device name, but the number is the same. Also note that you can destroy your entire computer if you put the wrong rdisk device name here, so uh&hellip; don&rsquo;t do that:</p>
+
+<pre><code> gunzip boot.img.gz
+ sudo dd if=boot.img of=/dev/rdisk3
+</code></pre></li>
+<li><p>Remove your USB stick, and then plug it right back in.</p></li>
+<li><p>Copy the iso file onto the drive. Just drop it right in the root of the drive. No, it doesn&rsquo;t matter if you use the finder or the cp command. Sheesh.</p></li>
+<li><p>You&rsquo;re done! Plug that little guy in, and select &ldquo;advanced options&rdquo; on the first menu, then &ldquo;rescue mode&rdquo;. Follow the prompts, blah blah. Do whatever you need to.</p></li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">David Bishop</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-29T09:53:00-05:00" pubdate data-updated="true">Jan 29<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://gnuconsulting.com//blog/2013/01/29/creating-a-debian-rescue-usb-drive/" data-via="gnuconsulting" data-counturl="http://gnuconsulting.com//blog/2013/01/29/creating-a-debian-rescue-usb-drive/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/13/fast-clean-lightweight-blogging/" title="Previous Post: Fast, clean, lightweight blogging">&laquo; Fast, clean, lightweight blogging</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/29/creating-a-debian-rescue-usb-drive/">Creating a Debian rescue usb drive in Mac OS X</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/13/fast-clean-lightweight-blogging/">Fast, clean, lightweight blogging</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/28/today/">Today</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/19/present-face/">Present Face</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/15/death-knell-of-the-death-penalty/">Death knell of the death penalty?</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo">Copyright &copy; 2014 geekery
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+<script type="text/javascript" src="http://include.reinvigorate.net/re_.js"></script>
+<script type="text/javascript">
+try {
+reinvigorate.track("3mplo-s7650v3093");
+} catch(err) {}
+</script>
+
+
+</body>
+</html>

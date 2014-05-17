@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Cooking | geekery]]></title>
+  <link href="http://gnuconsulting.com//blog/categories/cooking/atom.xml" rel="self"/>
+  <link href="http://gnuconsulting.com//"/>
+  <updated>2014-05-17T16:14:51-04:00</updated>
+  <id>http://gnuconsulting.com//</id>
+  <author>
+    <name><![CDATA[David Bishop]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Best Pizza in New York]]></title>
+    <link href="http://gnuconsulting.com//blog/2010/10/31/best-pizza-in-new-york/"/>
+    <updated>2010-10-31T00:01:01-04:00</updated>
+    <id>http://gnuconsulting.com//blog/2010/10/31/best-pizza-in-new-york</id>
+    <content type="html"><![CDATA[<p><a href="http://vimeo.com/16077855">Or so many people claim</a>.  All I know is that now, I&rsquo;m hungry.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[High Fructose Corn Syrup]]></title>
+    <link href="http://gnuconsulting.com//blog/2010/05/04/high-fructose-corn-syrup/"/>
+    <updated>2010-05-04T09:30:58-04:00</updated>
+    <id>http://gnuconsulting.com//blog/2010/05/04/high-fructose-corn-syrup</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m unconvinced either way on the subject of whether HFCS is &ldquo;bad&rdquo; for your (vs. regular sugar), but articles <a href="http://www.nytimes.com/2010/05/02/business/02syrup.html?pagewanted=all">like this one</a> are lending credence to the argument that this is just another consumer freak-out, similar to the &ldquo;vaccines cause autism&rdquo; scare.  Especially when I read that the referenced Princeton study has <a href="http://arstechnica.com/science/news/2010/03/does-high-fructose-corn-syrup-make-you-fatter.ars">some fairly big holes in it</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[If you haven't been reading]]></title>
+    <link href="http://gnuconsulting.com//blog/2009/02/10/if-you-havent-been-reading/"/>
+    <updated>2009-02-10T00:48:40-05:00</updated>
+    <id>http://gnuconsulting.com//blog/2009/02/10/if-you-havent-been-reading</id>
+    <content type="html"><![CDATA[<p>Roger Ebert&rsquo;s blog, then you&rsquo;re missing some really good writing.  His <a href="http://blogs.suntimes.com/ebert/2009/02/ending_up_in_a_kind_of_soundle.html">latest</a> is as good a place to start as any.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[For when I'm off my diet]]></title>
+    <link href="http://gnuconsulting.com//blog/2009/02/06/for-when-im-off-my-diet/"/>
+    <updated>2009-02-06T13:58:56-05:00</updated>
+    <id>http://gnuconsulting.com//blog/2009/02/06/for-when-im-off-my-diet</id>
+    <content type="html"><![CDATA[<p>or just have a <a href="http://www.bbqaddicts.com/bacon-explosion.html">deathwish</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Barack Obama and the Dixie Kitchen Bait Shop]]></title>
+    <link href="http://gnuconsulting.com//blog/2009/01/20/barack-obama-and-the-dixie-kitchen-bait-shop/"/>
+    <updated>2009-01-20T00:33:15-05:00</updated>
+    <id>http://gnuconsulting.com//blog/2009/01/20/barack-obama-and-the-dixie-kitchen-bait-shop</id>
+    <content type="html"><![CDATA[<p>Seriously:</p>
+
+<p><a href="http://www.wttw.com/main.taf?erube_fh=cp&amp;cp.submit.restaurantDetail=1&amp;cp.id=269">Check Please!</a></p>
+
+<p>Watch through the first 1:30 minute &ldquo;commercial&rdquo;, to see Barack Obama pimping &ldquo;food that tastes good, for a good price&rdquo;.</p>
+]]></content>
+  </entry>
+  
+</feed>

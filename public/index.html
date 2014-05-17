@@ -1,0 +1,590 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>geekery</title>
+  <meta name="author" content="David Bishop">
+
+  
+  <meta name="description" content="This guide will get you a USB stick running debian that you can use to boot into rescue mode. Well, you could also use it to install from, but that& &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://gnuconsulting.com//">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="geekery" type="application/atom+xml">
+  <script type="text/javascript" src="http://use.typekit.com/rtp2ork.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  
+
+</head>
+
+<body   >
+  <header role="banner">
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:gnuconsulting.com/" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/29/creating-a-debian-rescue-usb-drive/">Creating a Debian Rescue Usb Drive in Mac OS X</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-29T09:53:00-05:00" pubdate data-updated="true">Jan 29<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This guide will get you a USB stick running debian that you can use to boot into rescue mode. Well, you could also use it to install from, but that&rsquo;s not what I care about.</p>
+
+<ol>
+<li><p>Do the following, while modifying the version string to whatever the latest release is in the second url (both places!):
+     cd ~
+     wget <a href="ftp://ftp.debian.org/debian/dists/stable/main/installer-amd64/current/images/hd-media/boot.img.gz">ftp://ftp.debian.org/debian/dists/stable/main/installer-amd64/current/images/hd-media/boot.img.gz</a>
+     wget <a href="http://cdimage.debian.org/debian-cd/6.0.6/amd64/iso-cd/debian-6.0.6-amd64-businesscard.iso">http://cdimage.debian.org/debian-cd/6.0.6/amd64/iso-cd/debian-6.0.6-amd64-businesscard.iso</a></p></li>
+<li><p>Procure a USB stick, at least 1GB in size</p></li>
+<li><p>Plug it in. Run the following to see what device name the stick was assigned.:</p>
+
+<pre><code> $ ls -l /dev/disk*
+ brw-r----- 1 root operator 1, 0 Jan 19 11:10 /dev/disk0
+ brw-r----- 1 root operator 1, 1 Jan 19 11:10 /dev/disk0s1
+ brw-r----- 1 root operator 1, 3 Jan 19 11:10 /dev/disk0s2
+ brw-r----- 1 root operator 1, 2 Jan 19 11:10 /dev/disk0s3
+ brw-r----- 1 root operator 1, 4 Jan 19 11:10 /dev/disk1
+ brw-r----- 1 root operator 1, 0 Jan 30 12:15 /dev/disk3
+ brw-r----- 1 root operator 1, 1 Jan 30 12:15 /dev/disk3s1
+</code></pre></li>
+<li><p>Find the device that has a creation time of &ldquo;just now&rdquo;. Obviously, which device you use may be different than mine. Run the following:</p>
+
+<pre><code> diskutil unmountVolume /dev/disk3
+</code></pre></li>
+<li><p>Now you copy the boot.img onto the drive. <em>Please note</em> that I am using rdisk not disk in the device name, but the number is the same. Also note that you can destroy your entire computer if you put the wrong rdisk device name here, so uh&hellip; don&rsquo;t do that:</p>
+
+<pre><code> gunzip boot.img.gz
+ sudo dd if=boot.img of=/dev/rdisk3
+</code></pre></li>
+<li><p>Remove your USB stick, and then plug it right back in.</p></li>
+<li><p>Copy the iso file onto the drive. Just drop it right in the root of the drive. No, it doesn&rsquo;t matter if you use the finder or the cp command. Sheesh.</p></li>
+<li><p>You&rsquo;re done! Plug that little guy in, and select &ldquo;advanced options&rdquo; on the first menu, then &ldquo;rescue mode&rdquo;. Follow the prompts, blah blah. Do whatever you need to.</p></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/13/fast-clean-lightweight-blogging/">Fast, Clean, Lightweight Blogging</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-13T21:12:00-05:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Now, I&rsquo;m not exactly a shining example of actual blogging &ndash; I get distracted by real life way too easily.  However, on the technical side, I think I have a fairly good setup. Here is how you would duplicate it. I assume barebones linux knowledge and the ability to read carefully.</p>
+
+<ol>
+<li><p>Get a server. You can get a free account from <a href="http://aws.amazon.com">Amazon&rsquo;s AWS</a> and even a free instance for a year (a &ldquo;micro&rdquo; in their parlance, which is more than sufficient for a small blogging platform). You could also get a virtual machine from <a href="http://fatboxes.com">Fatboxes.com</a> &ndash; I hear they&rsquo;re pretty good. As it turns out, it doesn&rsquo;t really matter which distribution you choose &ndash; <a href="http://centos.org">CentOS</a>, <a href="http://debian.org">Debian</a>, <a href="http://archlinux.org">whatever</a>. If you&rsquo;re more comfortable with one than the other, have at.</p></li>
+<li><p>Install the software we&rsquo;ll be using to make things fast. <a href="http://varnish-cache.org">Varnish</a> and <a href="http://lighttpd.cz">Lighttpd</a>. For any reasonable distro, that should be as simple as a quick:</p>
+
+<pre><code>apt-get install varnish lighttpd
+</code></pre>
+
+<p>Varnish is a very simple beast. The entirety of the config you need is:</p>
+
+<pre><code>backend default {
+    .host = "127.0.0.1";
+    .port = "8080";
+}
+</code></pre>
+
+<p>Put that in /etc/varnish/default.vcl and start varnish. You might also check /etc/default/varnishncsa, set <code>VARNISHNCSA_ENABLED</code> to 1, and start the varnishlog service.</p>
+
+<p>Lighttpd is almost as simple. From the default config file, /etc/lighttpd/lighttpd.conf, set server.port to 8080. Everything else should be correct out of the box. Once you change that, start the lighttpd service. At this point, you should be able to hit port 80 on your server with a web browser, and get a default page in response. Last step is to chown /var/www/ to your user:</p>
+
+<pre><code>sudo chown user:group /var/www
+</code></pre></li>
+<li><p>Fork your own copy of octopress on <a href="https://github.com/imathis/octopress">github</a> and then clone a copy on your local computer somewhere:</p>
+
+<pre><code>git clone https://github.com/[your username here]/octopress.git
+bundle install # This installs all the gems and whatnot you need
+rake install  # This creates all the config files, directories, etc., you need
+</code></pre>
+
+<p>You now need to modify _config.yml and Rakefile in the root of the new repo. They are well-documented with comments, and should be easy enough to figure out. Things you want to keep an eye out specifically are:</p>
+
+<pre><code># From Rakefile
+ssh_user       = "dbishop@hostname"
+document_root  = "/var/www"
+
+# From _config.yml
+url: http://gnuconsulting.com/
+title: geekery
+subtitle: of all stripes
+author: David Bishop
+simple_search: http://google.com/search
+description: General geekery, a dash of politics, and more.
+</code></pre></li>
+<li><p>Add your first post by running:</p>
+
+<pre><code>rake new_post 'Hey, I'm blogging!'
+</code></pre>
+
+<p>That will create a file along the lines of <code>source/_posts/2013-01-13-hey-im-blogging.markdown</code>. Edit that in your favorite text editor (<a href="http://vim.org">vim</a>, natch), using <a href="http://daringfireball.net/projects/markdown/basics">Markdown</a> to format your text.</p></li>
+<li><p>Once your precious prose is how you want it, it&rsquo;s time to publish:</p>
+
+<pre><code>rake gen_deploy
+</code></pre>
+
+<p>And I&rsquo;m sure that all went swimmingly with no errors. You&rsquo;re welcome!</p></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/28/today/">Today</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-28T15:32:00-04:00" pubdate data-updated="true">Jun 28<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Is a <a href="http://www.theatlantic.com/business/archive/2012/06/the-health-care-decision-explained-in-1-paragraph-on-scotusblog/259097/">good day for America</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/19/present-face/">Present Face</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-19T09:56:00-04:00" pubdate data-updated="true">May 19<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Look, I <a href="http://www.youtube.com/watch?v=yMWTs0YT928">got you something!</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/15/death-knell-of-the-death-penalty/">Death Knell of the Death Penalty?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-15T17:16:00-04:00" pubdate data-updated="true">May 15<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.guardian.co.uk/world/2012/may/15/carlos-texas-innocent-man-death?fb=native&amp;CMP=FBCNETTXT9038">Hopefully.</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/24/tor-get-a-clue/">Tor Gets a Clue</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-24T22:01:00-04:00" pubdate data-updated="true">Apr 24<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Just a quick note that Tor, a genre-heavy imprint of Macmillan, will start releasing their titles <a href="http://www.tor.com/blogs/2012/04/torforge-e-book-titles-to-go-drm-free">without DRM</a>.  As someone who has books that are locked into Kindle, iBooks, and even the Nook, this is fantastic news. A good take on this is available from <a href="http://www.antipope.org/charlie/blog-static/2012/04/more-on-drm-and-ebooks.html">Charlie Stross</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/20/eternal-copywrite-a-modest-proposal/">Eternal Copywrite: A Modest Proposal</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-20T22:57:00-05:00" pubdate data-updated="true">Feb 20<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://blogs.telegraph.co.uk/technology/adrianhon/100007156/infinite-copyright-a-modest-proposal/" title="A Modest Proposal">Eternal Copywrite</a> is the only way we can possibly incentivize creative types to actually produce works of art.</p>
+
+<p>Obviously.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/10/21/microsoft-in-the-concert-ticket-selling-business/">Microsoft in the Concert Ticket Selling Business</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-21T21:23:13-04:00" pubdate data-updated="true">Oct 21<span>st</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.youtube.com/watch?v=-KLwVfi0uaU">Hilarious.</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/10/12/its-not-a-vast-left-wing-conspiracy/">It&#8217;s Not a Vast, Left-wing Conspiracy</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-12T08:28:13-04:00" pubdate data-updated="true">Oct 12<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.patheos.com/community/slacktivist/2011/10/10/liberal-bloggers-did-not-stage-the-values-voter-summit/">We&rsquo;re not making it up.</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/10/04/two-tragic-things/">Two Tragic Things</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-04T23:52:06-04:00" pubdate data-updated="true">Oct 4<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.mcsweeneys.net/articles/these-things-happened">Here&rsquo;s one</a> and <a href="http://bravegirlsclub.com/archives/5832">here&rsquo;s another</a>.</p>
+
+<p>Go out and be less of a jerk to each other.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/29/creating-a-debian-rescue-usb-drive/">Creating a Debian rescue usb drive in Mac OS X</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/13/fast-clean-lightweight-blogging/">Fast, clean, lightweight blogging</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/28/today/">Today</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/19/present-face/">Present Face</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/15/death-knell-of-the-death-penalty/">Death knell of the death penalty?</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo">Copyright &copy; 2014 geekery
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+<script type="text/javascript" src="http://include.reinvigorate.net/re_.js"></script>
+<script type="text/javascript">
+try {
+reinvigorate.track("3mplo-s7650v3093");
+} catch(err) {}
+</script>
+
+
+</body>
+</html>

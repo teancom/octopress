@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: News | geekery]]></title>
+  <link href="http://gnuconsulting.com//blog/categories/news/atom.xml" rel="self"/>
+  <link href="http://gnuconsulting.com//"/>
+  <updated>2014-05-17T16:14:51-04:00</updated>
+  <id>http://gnuconsulting.com//</id>
+  <author>
+    <name><![CDATA[David Bishop]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Bob Greene, fallen man]]></title>
+    <link href="http://gnuconsulting.com//blog/2010/09/04/bob-greene-fallen-man/"/>
+    <updated>2010-09-04T20:06:37-04:00</updated>
+    <id>http://gnuconsulting.com//blog/2010/09/04/bob-greene-fallen-man</id>
+    <content type="html"><![CDATA[<p>A very sympathetic view of a guy on the <a href="http://www.esquire.com/ESQ0403-APR_GREENE_rev_2">wrong side of a sex scandal</a>.  Somehow manages to make you sympathetic with someone who cheated on his wife with a 18-year old.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tabloids and respectability]]></title>
+    <link href="http://gnuconsulting.com//blog/2010/06/18/tabloids-and-respectability/"/>
+    <updated>2010-06-18T12:45:04-04:00</updated>
+    <id>http://gnuconsulting.com//blog/2010/06/18/tabloids-and-respectability</id>
+    <content type="html"><![CDATA[<p><a href="http://www.gq.com/news-politics/big-issues/201006/national-enquirer?printable=true">A desperate attempt to make tabloids seem respectable</a>.  Instead, it just made me sad &ndash; again &ndash; at how far the &ldquo;normal&rdquo; papers have fallen.</p>
+]]></content>
+  </entry>
+  
+</feed>
