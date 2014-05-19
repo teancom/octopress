@@ -10,4 +10,4 @@ categories:
 - Life
 ---
 
-[Fantastic](http://blog.frankchimero.com/post/1059696119/there-is-a-horse-in-the-apple-store)
+[Fantastic](http://frankchimero.com/blog/there-is-a-horse-in-the-apple-store/)
