@@ -7,7 +7,7 @@ title: geekery
 subtitle: of all stripes
 author: David Bishop
 simple_search: http://google.com/search
-description: General geekery, a dash of politics, and more.
+description: Feminist. Sysadmin. Dead Sexy.
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -19,7 +19,7 @@ date_format: "ordinal"
 subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
-email:
+email: tech@gnuconsulting.com
 
 # ----------------------- #
 #    Jekyll & Plugins     #
@@ -64,8 +64,8 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 # ----------------------- #
 
 # Github repositories
-github_user:
-github_repo_count: 0
+github_user: teancom
+github_repo_count: 3
 github_show_profile_link: true
 github_skip_forks: true
 

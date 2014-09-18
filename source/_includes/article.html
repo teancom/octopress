@@ -1,28 +1,40 @@
-{% unless page.no_header %}
-  <header>
-    {% if index %}
-      <h1 class="entry-title"><a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h1>
-    {% else %}
-      <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
-    {% endif %}
-    {% unless page.meta == false %}
-      <p class="meta">
-        {% include post/date.html %}{{ time }}
-        {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
-         | <a href="{% if index %}{{ root_url }}{{ post.url }}{% endif %}#disqus_thread">Comments</a>
-        {% endif %}
-      </p>
-    {% endunless %}
-  </header>
-{% endunless %}
-{% if index %}
-  <div class="entry-content">{{ content | excerpt }}</div>
-  {% capture excerpted %}{{ content | has_excerpt }}{% endcapture %}
-  {% if excerpted == 'true' %}
-    <footer>
-      <a rel="full-article" href="{{ root_url }}{{ post.url }}">{{ site.excerpt_link }}</a>
-    </footer>
-  {% endif %}
-{% else %}
-<div class="entry-content">{{ content }}</div>
-{% endif %}
+<article class="{{ page.type }} row {% if page.single == true %}single{% endif %}">
+	<header>
+		{% case page.type %}
+			{% when "generic" %}
+				{{ page.generic.header }}
+			{% when "text" %}
+				{% if page.text.title %}
+					<h2 class="instapaper_title"><a href="{{ root_url }}{{ page.url }}">{{ page.text.title }}</a></h2>
+				{% endif %}
+			{% when "photo" %}
+				<p><a href="{{ page.photo.url }}"><img src="{{ page.photo.url }}" /></a></p>
+			{% when "quote" %}
+				<blockquote>
+					{{ page.quote.quote | markdownify }}
+					<cite>{{ page.quote.source | markdownify }}</cite>
+				</blockquote>
+			{% when "link" %}
+				<h2 class="instapaper_title"><a href="{{ page.link.url }}">{{ page.link.title }}</a></h2>
+			{% when "audio" %}
+				<p><audio src="{{ page.audio.url }}"></audio></p>
+			{% when "video" %}
+				<p>{{ page.video.embed }}</p>
+			{% else %}
+				<p>Unknown article type.</p>
+		{% endcase %}
+	</header>
+	<section class="instapaper_body">
+		{{ content }}
+		
+		{% if page.source.url %}
+			<p class="source">via <a href="{{ page.source.url }}">{{ page.source.title }}</a></p>
+		{% endif %}
+	</section>
+	<footer>
+		<p>{% include post/date.html %}{{ time }}</p>
+		{% if page.single == true %}
+			{% include post/livefyre.html %}
+		{% endif %}
+	</footer>
+</article>

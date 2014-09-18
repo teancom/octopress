@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Intro to Cloud Foundry and Bosh, part 2"
+title: "Intro to Cloud Foundry and BOSH, part 2"
 date: 2014-09-14 18:44
 comments: true
 categories:
 ---
 
-When last we were here, I was giving a [broad overview](/blog/2014/09/07/intro-to-cloudfoundry/) of Cloud Foundry and Bosh,
+When last we were here, I was giving a [broad overview](/blog/2014/09/07/intro-to-cloudfoundry/) of Cloud Foundry and BOSH,
 comparing them to [Heroku](http://heroku.com) and other PaaS's. Today, we're going to go over spinning
 up a Cloud Foundry instance from scratch, all on your handy local laptop. These
 instructions assume you are using OS X, though it should work for any platform
@@ -18,6 +18,13 @@ which can also take a while), this process might take up to an hour. I also assu
 that you have a working install of [homebrew](http://brew.sh). It isn't absolutely
 necessary, but it sure makes things easier.
 
+Also, a point of clarification from my previous post (and I'll go update that as well).
+During this process we'll be using bosh-lite to provision Cloud Foundry on a single
+VM using containers. In production, with the "real" BOSH, we would instead be provisioning
+it with actual virtual machines. The fact that Cloud Foundry is running in containers is
+solely due to the fact that we're using bosh-lite to give us a playground to test
+things. Keep that in mind as we go through this exercise.
+
 First is the prerequisites. You need [Virtual Box](http://virtualbox.org) and [Vagrant](http://vagrantup.com)
 installed. As of this writing, Virtual Box is at 4.3.16 and Vagrant is at 1.6.5.
 You should be at those versions or better. You also need [spiff](https://github.com/cloudfoundry-incubator/spiff)
@@ -25,24 +32,24 @@ You should be at those versions or better. You also need [spiff](https://github.
     brew tap xoebus/homebrew-cloudfoundry
     brew install spiff
 
-and the [Cloud Foundry CLI](https://github.com/cloudfoundry/cli)
+and the [Cloud Foundry cli](https://github.com/cloudfoundry/cli)
 
     brew tap pivotal/tap
     brew install cloudfoundry-cli
 
-and finally the [Bosh CLI](https://rubygems.org/gems/bosh_cli)
+and finally the [BOSH cli](https://rubygems.org/gems/bosh_cli)
 
     gem install bosh_cli
 
-Spiff is a tool that combines multiple Bosh manifests into one, which makes it
-easier to re-use components in Bosh. The Cloud Foundry CLI is what you will be
+Spiff is a tool that combines multiple BOSH manifests into one, which makes it
+easier to re-use components in BOSH. The Cloud Foundry CLI is what you will be
 using to push your final web app to your running Cloud Foundry instance. And the
-Bosh CLI is the tool that allows you to interact with bosh, running commands and
-connecting to virtual machines that are running inside of Bosh.
+BOSH cli is the tool that allows you to interact with BOSH, running commands and
+connecting to virtual machines that are managed by BOSH.
 
-Remember - the order is: virtual machine in VirtualBox that runs Bosh, a tool that
-helps provision multiple virtual machines and/or containers at a time. We'll be
-using Bosh to provision a cluster of containers running *within* that first machine,
+Remember - the order is: virtual machine in VirtualBox that runs BOSH, a tool that
+helps orchestrate multiple virtual machines and/or containers at a time. We'll be
+using BOSH to provision a cluster of containers running *within* that first machine,
 and that cluster is what will be running the Cloud Foundry software. Cloud Foundry is the software that makes
 it easy to spin up even more containers, which are the small slices of VMs that is all you need to run web
 applications. Refer back to this paragraph if you start to lose track of what the
@@ -71,11 +78,11 @@ by first targeting it and then logging in with the username/password combo of "a
     bosh target 192.168.50.4 lite
     bosh login
 
-That makes it so that when you run the bosh cli commands, it knows which bosh instance
-to talk to. In the future when you're a bosh wizard, controlling multiple bosh instances
+That makes it so that when you run the BOSH cli commands, it knows which BOSH director
+to talk to. In the future when you're a bosh wizard, controlling multiple BOSH directors
 with the flick of your wrists, you will run the 'bosh targets' command to list out
 all of the different instances that you've logged into, and switch between them using
-the alias that you've given them. In this case, we've aliased this bosh instance to 'lite',
+the alias that you've given them. In this case, we've aliased this BOSH director to 'lite',
 so you'd switch to it with 'bosh target lite'. For now, just know that's
 how the bosh command knows where to go.
 
@@ -99,7 +106,7 @@ through and defines various instances, along with their IP address, disk space a
 what template to use, etc. It also defines the networks and subnets, giving them a
 name and a range of IPs.
 
-While you're looking at that, bosh is downloading all of the "stemcells" (VM templates)
+While you're looking at that, BOSH is downloading all of the "stemcells" (VM templates)
 and building packages to use with those stemcells and produce functional machines. This part
 takes the longest of all, and heats up my laptop the most (16 minutes on a brand-new
 top-of-the-line Macbook Pro). I probably haven't posted
@@ -206,10 +213,10 @@ with a child of 'rackup' underneath it (actually, bash then rackup, but who's co
 My next blog post will deal with setting up a database for your applications to use
 as a service. Until then, have fun doing things like 'cf scale &lt;appname&gt; 3' to
 see how easy it is to add more "droplets" (execution units, containers, whatever you
-want to call them). Also spend some time playing around with the cf and bosh command-lines.
+want to call them). Also spend some time playing around with the cf and BOSH command-lines.
 How do you view logs from individual containers? What happens if you kill the wshd process
 of your sinatra example app from "the outside" (i.e., in the bosh-lite VM)? Kick
-the tires, it's surprisingly difficult to break. If you do get in trouble, try 'bosh cloudcheck'.
+the tires, it's surprisingly difficult to break. If you do get in trouble, try 'bosh cloudcheck' (available as 'bosh cck' as well).
 And if worst comes to worst, you get to delete the Vagrant VM and start again, hardly
 the end of the world. And you'll probably learn a little more each time you rebuild.
 

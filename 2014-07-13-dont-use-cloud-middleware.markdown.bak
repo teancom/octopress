@@ -1,0 +1,74 @@
+---
+layout: post
+title: "Don't Use Cloud Middleware"
+date: 2014-07-13 01:32
+comments: true
+categories:
+---
+
+I've been working on various "cloudification" projects lately and something that
+has come up multiple times is that we should not write any sort of automation or
+scripting against the "native" APIs provided by the cloud providers themselves.
+Even if - for now - the project will run solely on vMware or Amazon AWS, we
+should look to the future and assume that we will either be using multiple cloud
+providers or at the very least make it non-painful to switch from one to the
+other.
+
+And this is laudable! I either agreed wholeheartedly or even said that myself.
+The impulse is sound and might be likened to the bad old days of writing non-portable
+code in C, so that switching from big to little-endian CPUs (or vice versa) could
+result in a large, nasty porting effort. But I think the trade-off in this case
+is a mirage, or at least not worth the effort.
+
+Let's examine the reasons to use a middle-ware layer vs. hitting the native APIs
+and see if any of the hold up under scrutiny.
+
+1.  You don't want to be locked into a single vendor
+1.  You don't want to have to learn multiple APIs / how things work behind the
+    scenes.
+1.  You happen to use the same language in the rest of your project that the
+    middle-ware layer does (ruby/fog, java/jclouds, python/libcloud, etc.)
+1.  You want to be able to support "all" of the cloud providers out there. Each
+    library claims to support over 30!
+
+Starting with the first and most easily dismissed concern - vendor lock-in. So
+you don't want to be tied to a single vendor. That's nice! What - exactly - do
+you think is happening when you write all of your code against a single API,
+whether that API is provided "for free" by the folks writing fog, or by the people
+at Amazon? You're still locked in. If fog is abandoned, you'd still have to port
+all of your code to something else, and if you go to another middle-ware library,
+there is a really good chance you'd have to throw out all of your code and start
+from scratch in another language. Or - in your copious amounts of free time - you
+can also start supporting an opensource project (that was apparently unsuccessful
+enough that it was abandoned in the first place). Oh and by the way: the internet
+is littered with the bones of projects that thought this was going to be a super-neat
+thing to do and then died as people lost interest.
+
+The second reason - you don't want to have to learn multiple APIs and how things
+really work - is equally laughable. Every platform has its quirks, and no library
+can make those magically go away. Do you want to be able to move virtual machines
+from one hypervisor to another? Completely ordinary using VMware's ESXi, completely
+impossible with Amazon's AWS. In ESX you don't even have to shut the VM down, assuming
+you have shared storage and matching hardware*. In AWS you have to shut down the
+machine and start it back up (a reboot is insufficient), and even then you're just
+hoping you don't get the same hypervisor - you have no direct control. If you are
+building a dashboard to manage machines, you still have to code logic for handling
+this. So what are you saving again?
+
+Reason #3, the language of your project matches that of the middle-ware layer. That's
+short-sighted in two respects. First of all, at least in my experience, there is
+no such thing as a shop that writes everything exclusively in one language. Sure,
+their "main" product might be in php, but what about all of the tooling that springs
+up whereever developers and sysadmins tread? Java for the atlassian tools forced
+on them by management, ruby for chef, perl for the web service written by someone
+that hasn't worked there for five years but it still serves its purpose, we all
+end up polyglots, in any shop larger than two people. Are you going to force all
+tooling for this one thing to be written in one language
+
+
+* See? more quirks that you know, that a 3rd party vendor wouldn't
+
+
+Instead of being tied to the vendor that's providing you the actual
+service (and can presumably help you if you have problems), you're tying yourself
+to a vendor with whom you have no relationship and
